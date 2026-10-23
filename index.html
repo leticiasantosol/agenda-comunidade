@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema simples de cadastro de eventos.">
+  <title>Agenda Comunidade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="container">
+      <a class="logo" href="#inicio" aria-label="Agenda Comunidade - início">
+        <span class="logo-icone">&lt;/&gt;</span>
+        Agenda Comunidade
+      </a>
+      <p>Encontre e compartilhe os próximos encontros.</p>
+    </div>
+  </header>
+
+  <main id="inicio" class="container layout-principal">
+    <section class="painel cadastro" aria-labelledby="titulo-formulario">
+      <p class="rotulo">NOVO EVENTO</p>
+      <h1 id="titulo-formulario">Cadastre um evento</h1>
+      <p class="texto-apoio">Preencha os dados para adicionar um encontro à agenda.</p>
+
+      <form id="form-evento" novalidate>
+        <div class="campo">
+          <label for="titulo">Título do evento</label>
+          <input id="titulo" name="titulo" type="text" placeholder="Ex.: Workshop de Java" required>
+        </div>
+
+        <div class="campos-linha">
+          <div class="campo">
+            <label for="data">Data</label>
+            <input id="data" name="data" type="date" required>
+          </div>
+          <div class="campo">
+            <label for="horario">Horário</label>
+            <input id="horario" name="horario" type="time" required>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="local">Local</label>
+          <input id="local" name="local" type="text" placeholder="Ex.: Online - Discord" required>
+        </div>
+
+        <p id="mensagem-erro" class="mensagem mensagem-erro" role="alert" aria-live="polite"></p>
+        <button type="submit">Cadastrar evento <span aria-hidden="true">→</span></button>
+      </form>
+
+      <p id="mensagem-sucesso" class="mensagem mensagem-sucesso" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="eventos" aria-labelledby="titulo-eventos">
+      <div class="titulo-secao">
+        <div>
+          <p class="rotulo">AGENDA</p>
+          <h2 id="titulo-eventos">Próximos eventos</h2>
+        </div>
+        <span id="contador-eventos" class="contador-eventos"></span>
+      </div>
+
+      <div id="lista-eventos" class="lista-eventos" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Agenda Comunidade · Seu próximo encontro começa aqui.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
